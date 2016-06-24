@@ -11,6 +11,11 @@ public:
 
     charHash keyHashLize(string s){
         	charHash s1;
+        	
+        	for (int i=0;i<26;++i){
+        	    s1['A'+i]=0;
+        	    s1['a'+i]=0;
+        	}
         	for (int i=0;i<s.length();i++){
         		if (s1[s[i]]) s1[s[i]]++;
         		else s1[s[i]]=1;
@@ -29,7 +34,7 @@ public:
 
         for (charHash::iterator t2=t1.begin();t2 != t1.end();t2++)
         {
-        	if (! t2->second <= s1[t2->first] ) return false;        	
+        	if (! (t2->second <= s1[t2->first]) ) return false;        	
         }
 
         return true;
