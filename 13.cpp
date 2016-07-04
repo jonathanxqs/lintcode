@@ -8,9 +8,9 @@ public:
      */
     int strStr(const char *source, const char *target) {
         // write your code here
-        6222084301003207896
+        
 
-        #include "stdafx.h"
+#include "stdafx.h"
 #include <iostream>
 using namespace std;
 
