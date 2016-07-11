@@ -10,19 +10,43 @@ public:
         sort(nums.begin(),nums.end());
         int nums_l=nums.size();
         int i,j,k,n;
-        int nu_arr[nums_l+3];
-        int sum=0,sum1=0;
+        
+        int sum=0,sum1=0,close_sum=1<<31;
+        // close_sum= (unsigned) ~close_sum;
+        cout<<close_sum<<endl;
         i=0;
+        int l,r,mid;
 
-        for (auto s:nums){
-        	i++;
-        	nu_arr[i]=s;
+        
+
+        for (i=0;i<=nums_l-1;i++){
+        	for (j=i+1;j<=nums_l-1;j++){
+        		l=j+1;r=nums_l-1;
+        		int target_k=target-nums[i]-nums[j];
+        		while (l<=r){
+        			mid = (l+r)/2;
+        			if (nums[mid]-target_k<0){
+        				l=mid+1;
+        			}
+        			else if (nums[mid]-target_k>0){
+        				r=mid-1;
+        			}
+        				else return target; 
+        		}
+
+        		if (mid+1 <nums_l and abs(nums[mid+1]-target_k)<abs(close_sum-target)) 
+        			close_sum=nums[mid+1]+nums[j]+nums[i];
+        		if (mid >j and abs(nums[mid]-target_k)<abs(close_sum-target)) 		
+        			close_sum=nums[mid]+nums[j]+nums[i];
+        		if (mid-1 > j and abs(nums[mid-1]-target_k)<abs(close_sum-target)) 
+        			close_sum=nums[mid-1]+nums[j]+nums[i];
+
+        	}
         }
 
-        for (i=1;i<=nums_l;i++){
-        	for (j=i+1;j<=nums_l;j++)
-
-
-        }
+        return close_sum;
     }
 };
+
+
+// Total Runtime: 16 ms
