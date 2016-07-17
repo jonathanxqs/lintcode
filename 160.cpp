@@ -11,6 +11,7 @@ public:
         	mid=(l+r)/2;
         	min1=min(min1,num[mid]);
         	if (num[l]<num[r]){
+        		r=mid-1;
         		
         	}
 
