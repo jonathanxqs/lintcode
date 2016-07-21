@@ -8,7 +8,7 @@ public:
         // write your code here
         int md_a=a%b,i=0,j;
         long long da=1;
-        std::vector<long long> xl(b);
+        std::vector<long long> xl(b+2);
 
         xl[0]=(da%b);
 
@@ -16,7 +16,7 @@ public:
 
         	da=(da*md_a)%b;
         	i++;   
-        	if (find(xl,da)!= -1) break;
+        	if (find(xl.begin(),xl.begin()+i-1,da) != xl.begin()+i) break;
         	xl[i]=(da);
         		
 
