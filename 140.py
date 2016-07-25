@@ -14,4 +14,5 @@ class Solution:
             b = b / 2
         return ans % n
 
-        # WA
+        # WA because of lintcode 
+        # AC
