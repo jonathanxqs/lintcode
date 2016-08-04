@@ -2,18 +2,24 @@ class Solution {
 public:
     /**
      * @param A : An integer array
-     * @return : An integer 
+     * @return : Two integers
      */
-    int singleNumberII(vector<int> &A) {
+    vector<int> singleNumberIII(vector<int> &A) {
         // write your code here
-        int count[32] = {0};
-        int res = 0;
-        for (int i = 0; i < 32; i++) {
-            for (auto &v : A) {
-                count[i] += (v >> i) & 1;
+        std::map<int, int> mapA;
+        for (auto sa:A){
+            if (mapA.find(sa)==mapA.end()){
+                mapA[sa]=1;
             }
-            res |= ((count[i] % 3) << i);
+            else mapA[sa]+=1;
         }
-        return res;
+
+        std::vector<int> v_rt;
+        for (auto sa:A){
+            if (mapA[sa]==1) v_rt.push_back(sa);
+        }
+
+        return v_rt;
+
     }
 };
