@@ -27,8 +27,8 @@ public:
         ListNode* fast = head;
         ListNode* slow = head;
         while(fast -> next != NULL && fast -> next -> next != NULL){
-            fast = fast -> next;
-            fast = fast -> next;
+            
+            fast = fast -> next->fast;
             slow = slow -> next;
         }
         
@@ -41,7 +41,7 @@ public:
         ListNode* sorted = merge(list1 , list2);
         return sorted;
     }
-    
+
     ListNode* merge(ListNode* list1 , ListNode* list2){
         if(list1 == NULL) return list2;
         if(list2 == NULL) return list1;
