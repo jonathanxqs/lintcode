@@ -26,10 +26,19 @@ public:
         int midVal=preorder[0];
         TreeNode *mid=new TreeNode(preorder[0]),*left,*right,*s1,*s2;
 
+        auto md_it=find(inorder.begin(),inorder.end(),midVal);
+        int in_lg=md_it-inorder.begin();
+        // cout<<in_lg<<endl;
+
+        std::vector<int> in_left(inorder.begin(),md_it);
+        std::vector<int> in_right(md_it+1,inorder.end());
+        std::vector<int> pre_left(preorder.begin()+1,preorder.begin()+1+in_lg);
+        std::vector<int> pre_right(preorder.begin()+1+in_lg,preorder.end());
+
         
 
-        mid->left=buildTree();
-        mid->right=buildTree();
+        mid->left=buildTree(pre_left,in_left);
+        mid->right=buildTree(pre_right,in_right);
 
         return mid;
 
