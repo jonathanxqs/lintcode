@@ -21,5 +21,17 @@ class Solution {
 public:
     TreeNode *buildTree(vector<int> &preorder, vector<int> &inorder) {
         // write your code here
+    	if (preorder.size()==0) return NULL;
+
+        int midVal=preorder[0];
+        TreeNode *mid=new TreeNode(preorder[0]),*left,*right,*s1,*s2;
+
+        
+
+        mid->left=buildTree();
+        mid->right=buildTree();
+
+        return mid;
+
     }
 };
