@@ -10,41 +10,16 @@
  *     }
  * }
  */
+ 
+
 class Solution {
-public:
     /**
-     * @param root: The root of binary tree.
-     * @return: True if the binary tree is BST, or false
+     *@param preorder : A list of integers that preorder traversal of a tree
+     *@param inorder : A list of integers that inorder traversal of a tree
+     *@return : Root of a tree
      */
-
-    bool isValidBST(TreeNode *root) {
+public:
+    TreeNode *buildTree(vector<int> &preorder, vector<int> &inorder) {
         // write your code here
-        if (root->left){ 
-        		if (isValidBST(root->left) and root->val > maxNodeValue(root->left->val)) ;
-        		else return false;
-        	}
-
-        if (root->right){ 
-        		if (isValidBST(root->right) and root->val < mixNodeValue(root->right->val)) ;
-        		else return false;
-        	}
-
-        if (root==nullptr) return true;
-        return true;
-
-
     }
-    
-    int maxNodeValue(TreeNode *root){
-    	if (root==nullptr) return -INT_MAX;
-    	return max(root->val,maxNodeValue(root->left),maxNodeValue(root->right));
-
-    }
-
-    int minNodeValue(TreeNode *root){
-    	if (root==nullptr) return INT_MAX;
-    	return min(root->val,minNodeValue(root->left),minNodeValue(root->right));
-
-    }
-
 };
