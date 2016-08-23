@@ -19,7 +19,8 @@ public:
         int rm_target=target,i=0,j,n,m;
 
         while (1){
-        	rm_target -=
+        	rm_target -=candidates[i];
+        	if (rm_target==0)
 
         }
 
