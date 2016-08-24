@@ -7,7 +7,8 @@ public:
      */
     vector<vector<int> > combine(int n, int k) {
         // write your code here
-        vector<vector<int> > ans;vector<int> stack;
+        vector<vector<int> > ans;
+        vector<int> stack;
         for (int i=1; i<=k; ++i) stack.push_back(i);
         ans.push_back(stack);
         while (1){
@@ -18,5 +19,6 @@ public:
             ans.push_back(stack);
         }
         return ans;
+        // relax the last sequence
     }
 };
