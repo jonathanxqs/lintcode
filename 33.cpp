@@ -20,7 +20,7 @@ public:
         if (n<1) return rt_st;
         this->n=n;
 
-        int rt_flag=bfs(n,0,v_int,0);
+        int rt_flag=bfs(0,v_int,0,0);
 
         if(rt_flag==1) return rt_st;
         else cout<<rt_flag<<endl;
@@ -42,16 +42,19 @@ public:
     	return rt_s;
     }
 
-    int bfs(int n,int i,std::vector<int> &v,long long dj_status){
+    int bfs(int i,std::vector<int> &v,long long dj_status_l,long long dj_status_r){
 
     	if (i==n) rt_st.push_back(vecInt_to_vecstring(v));
 
     	int j,k;
-    	long long dj_status_bf=dj_status;
-    	dj_status = ((dj_status<<1) | (dj_status>>1)) %(1<<n);
+    	
+    	dj_status_l = (dj_status_l<<1) ;
+    	dj_status_r = dj_status_r>>1 ;
+    	dj_status_r = dj_status_r %(1<<n);
+    	dj_status_l = dj_status_l %(1<<n);
 
     	 // for (auto v1:v) cout<<v1<<" ";
-    	 // cout<<"dj_status after:"<<dj_status<<endl;
+    	 // cout<<"dj_status after:  "<<dj_status_l<<"<-left;right->"<<dj_status_r<<endl;
     	
 
 
@@ -60,10 +63,10 @@ public:
     		if (find(v.begin(),v.end(),j)==v.end()){   			
     			
     			
-				if ( ( dj_status & (1<<j-1)) == 0){
-					 // cout<<"insert: "<<j<<endl; 
+				if (  (( dj_status_r | dj_status_l) & (1<<j-1)) == 0){
+					   // cout<<"insert: "<<j<<endl; 
 					v.push_back(j);    			
-    				bfs(n,i+1,v,dj_status| (1<<j-1));
+    				bfs(i+1,v,dj_status_l| (1<<j-1),dj_status_r|(1<<j-1));
     				v.pop_back();
 				}
     			
