@@ -9,7 +9,9 @@ public:
         // write your code here
         sort(candidates.begin(),candidates.end());
         std::vector<int> v;
-        std::vector<std::vector<int> > rt_cs;
+        std::vector<vector<int> > rt_cs;
+
+        if (candidates.size()==0) return rt_cs;
 
         if (candidates[0]<=0) {
         	cout<<"fault input,has non-positive number"<<endl;
@@ -18,12 +20,10 @@ public:
 
         int rm_target=target,i=0,j,n,m;
 
-        while (1){
-        	rm_target -=candidates[i];
-        	if (rm_target==0)
-
-        }
+        if (candidates[0]==target) 
 
 
     }
+
+	depthFirstSearch(std::vector<int> &candidates,int target)
 };
