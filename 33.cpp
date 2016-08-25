@@ -50,8 +50,8 @@ public:
     	long long dj_status_bf=dj_status;
     	dj_status = ((dj_status<<1) | (dj_status>>1)) %(1<<n);
 
-    	// for (auto v1:v) cout<<v1<<" ";
-    	// cout<<"dj_status after:"<<dj_status<<endl;
+    	 // for (auto v1:v) cout<<v1<<" ";
+    	 // cout<<"dj_status after:"<<dj_status<<endl;
     	
 
 
@@ -61,9 +61,9 @@ public:
     			
     			
 				if ( ( dj_status & (1<<j-1)) == 0){
-					// cout<<"insert: "<<j<<endl; 
+					 // cout<<"insert: "<<j<<endl; 
 					v.push_back(j);    			
-    				bfs(n,i+1,v,dj_status& (1<<j-1));
+    				bfs(n,i+1,v,dj_status| (1<<j-1));
     				v.pop_back();
 				}
     			
