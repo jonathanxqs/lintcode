@@ -48,13 +48,28 @@ public:
     	if (i==n) rt_st.push_back(vecInt_to_vecstring(v));
 
     	int j,k;
+    	long long dj_status=0,dj_status_bf=0;
+    	for (const auto v1:v){
+    		dj_status=dj_status|(1<<v1);
+    		cout<<v1<<" ";
+    	}
+    	
+    	dj_status_bf=dj_status;
+    	dj_status = ((dj_status<<1) | (dj_status>>1));
+    	cout<<dj_status<<endl;
+
 
     	for (j=1;j<=n;j++){
-    		if (find(v.begin(),v.end(),j)!=v.end()){
 
-    			v.push_back(j);    			
-    			bfs(n,i+1,v);
-    			v.pop_back();
+    		if (find(v.begin(),v.end(),j)==v.end()){   			
+    			
+    			
+				if ( ( dj_status & (1<<j)) == 0){
+					v.push_back(j);    			
+    				bfs(n,i+1,v);
+    				v.pop_back();
+				}
+    			
 
     		}
     		else{
