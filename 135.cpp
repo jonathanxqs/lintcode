@@ -5,13 +5,20 @@ public:
      * @param target:An integer
      * @return: A list of lists of integers
      */
+
+    vector<int> candidates_ori;
+    int n_cand;
+
     vector<vector<int> > combinationSum(vector<int> &candidates, int target) {
         // write your code here
         sort(candidates.begin(),candidates.end());
+        this->candidates_ori=candidates;
+        this->n_cand=candidates.size();
+
         std::vector<int> v;
         std::vector<vector<int> > rt_cs;
 
-        if (candidates.size()==0) return rt_cs;
+        if (n_cand==0) return rt_cs;
 
         if (candidates[0]<=0) {
         	cout<<"fault input,has non-positive number"<<endl;
@@ -25,5 +32,8 @@ public:
 
     }
 
-	depthFirstSearch(std::vector<int> &candidates,int target)
+	depthFirstSearch(std::vector<int> &candidates,int target){
+
+
+	}
 };
