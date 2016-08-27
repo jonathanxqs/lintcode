@@ -9,7 +9,7 @@ public:
 
     int f[1111][1111];
     int size_d;
-    const int NotLinkPara=INT_MAX/2-1;
+    const int NotLinkParaMax=INT_MAX/2-1;
 
     int distancLize(string s1,string s2){
     	if (s1.size()!=s2.size()) return 3;
@@ -40,8 +40,13 @@ public:
         		f[i][j]=f[j][i]=distancLize(v_dict[i],v_dict[j]);
         }
 
-        int shortDis[size_d+5][size_d+5];
-        memset(shortDis,sizeof(shortDis),0);
+        std::deque<int> shortDis_0(size_d+5,NotLinkParaMax);
+        for (i=0;i<=size_d+1;i++) shortDis_0[i]=f[0][i];
+        
+        std::set<int> inStack,notInStack;
+   	    for (i=0;i<=size_d+1;i++) notInStack.push_back()
+
+        	
         for (i=0;i<=size_d+1;i++){
         	for (j=0;j<=size_d+1;j++)
         	{
