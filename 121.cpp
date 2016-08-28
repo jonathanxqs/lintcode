@@ -6,6 +6,9 @@ public:
       * @param dict, a set of string
       * @return a list of lists of string
       */
+
+    // A method by simulating shortest path one by one;
+
     vector<vector<string>> findLadders(string start, string end, unordered_set<string> &dict) {
         // write your code here
         vector<vector<string>> Path;
@@ -25,7 +28,7 @@ public:
 		if(dict.count(start))dict.erase(start);
 		if(dict.count(end))dict.erase(end);
 		CurrCandidate.push(make_pair(start,1));
-		
+
 		visited.insert(start);
 		while(!CurrCandidate.empty()){
 			pair<string,int> CurrWord(CurrCandidate.front());
