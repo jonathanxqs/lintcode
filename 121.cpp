@@ -13,6 +13,7 @@ public:
 		unordered_set<string> visited;
 		queue<pair<string,int>> CurrCandidate;
 		multimap<string,string> father;
+
 		bool finded=false;
 		int curr_step=0;
 		int WordSize=start.size();
@@ -24,6 +25,7 @@ public:
 		if(dict.count(start))dict.erase(start);
 		if(dict.count(end))dict.erase(end);
 		CurrCandidate.push(make_pair(start,1));
+		
 		visited.insert(start);
 		while(!CurrCandidate.empty()){
 			pair<string,int> CurrWord(CurrCandidate.front());
