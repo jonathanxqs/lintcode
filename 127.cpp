@@ -21,7 +21,7 @@ public:
 
         deque<UndirectedGraphNode *> neighborsInProcess;
 
-        if (graph == NULL) return NULL;
+        if (graph.size()==0) return neighborsInProcess;
         memset(f,sizeof(f),0);
 
         neighborsInProcess.push_back(graph);
@@ -43,7 +43,7 @@ public:
 
         }
 
-        
+
 
     }
 };
