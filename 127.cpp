@@ -13,35 +13,67 @@ public:
      * @return: Any topological order for the given graph.
      */
     std::map<int, DirectedGraphNode*> mapNumToNode;
-    std::vector<DirectedGraphNode> rt_route;
-    int f[1111][1111];
+    std::vector<DirectedGraphNode *> rt_route; 
+    vector<DirectedGraphNode*> graph,graph_rm;    
+    std::map<DirectedGraphNode *,int> qx,qx_ori;
+    // set inQueue<>
+
+    int dfs(DirectedGraphNode *node){
+
+    	// cout<<node->label<<" ";
+    	rt_route.push_back(node);
+    	// graph_rm.erase(node);
+
+    	if (rt_route.size()==graph.size()) {
+    		// cout<<"DFS finish a route!"<<endl;
+    		return 1;
+    	}
+
+    	for (auto const s:node->neighbors){
+    			qx[s]--;    			
+    	}
+
+    	for (auto const s:graph_rm){
+    		if (qx[s]==0 and find(rt_route.begin(),rt_route.end(),s)==rt_route.end() ){    			
+    			if (dfs(s)==1) return 1;
+    		}
+    	}
+
+    	for (auto const s:node->neighbors){
+    			qx[s]++;    			
+    	}
+    	rt_route.pop_back();
+    	// graph_rm.push_back(node);
+    	// cout<<endl;
+    	return -1;
+
+    }
 
     vector<DirectedGraphNode*> topSort(vector<DirectedGraphNode*> graph) {
         // write your code here
 
-        deque<UndirectedGraphNode *> neighborsInProcess;
-
-        if (graph.size()==0) return neighborsInProcess;
-        memset(f,sizeof(f),0);
-
-        neighborsInProcess.push_back(graph);
-        mapNumToNode[graph->label]=graph;
         
 
-        while (neighborsInProcess.size()>0){
+        if (graph.size()==0) return rt_route;
+        this->graph=graph;
+        this->graph_rm=graph;
+        
+        for(const auto ori_top:graph ) qx[ori_top]=0; 
 
-        	ori_top=neighborsInProcess.front();
-
+        for(const auto ori_top:graph ){  
+        	 
         	for (const auto s: ori_top->neighbors){
-        			mapNumToNode[s->label]=s;
-        			neighborsInProcess.push_back(s);
-        			f[ori_top->label][s->label]=1;
-        		
-        	}
-
-        	neighborsInProcess.pop_front();
-
+        				qx[s]+=1;
+        	}  
         }
+
+        for (auto const ori_top:graph){
+        	if (qx[ori_top]==0) {
+        		if (dfs(ori_top)==1) return rt_route;        		
+        	}
+        }
+
+        return rt_route;
 
 
 
