@@ -16,14 +16,22 @@ public:
         int i,j,k,t;
 
         std::vector<int> v(n+5,0);
-        dp_grid(m+5,v);
+        dp_grid.assign(m+5,v);
+        dp_grid[1][1]=1;
 
         for (i=0;i<m;i++)
         	for (j=0;j<n;j++)
-        		if (obstacleGrid[i][j]==0) {
-        			if (j>0 and obstacleGrid[i][j-1]==0) dp[i+1,j+1]+=dp[i+1][j];
-        			if (i>0 and obstacleGrid[i-1][j]==0) dp[i+1,j+1]+=dp[i][j+1];
-        		}
+        		if (obstacleGrid[i][j]==0) {        			
+        			
+        				if (j>0 and obstacleGrid[i][j-1]==0) dp_grid[i+1][j+1]+=dp_grid[i+1][j];
+        				if (i>0 and obstacleGrid[i-1][j]==0) dp_grid[i+1][j+1]+=dp_grid[i][j+1];
+        			} 
+
+        return dp_grid[m][n];     			
+
+        		
 
     }
+
+
 };
