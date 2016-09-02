@@ -9,10 +9,10 @@ public:
             return 0;
         }
         
-        int result = -2147483648;
+        int result = INT_MIN;
         int n = (int)nums.size();
-        vector<int> maxLeft(n + 1, -2147483648);
-        vector<int> maxRight(n + 1, -2147483648);
+        vector<int> maxLeft(n + 1, result);
+        vector<int> maxRight(n + 1, result);
         vector<int> profit(n + 1, 0);
         
         vector<int> sum(n + 1, 0);
