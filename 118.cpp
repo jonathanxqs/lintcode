@@ -10,6 +10,7 @@ public:
         vector<vector<int>> t(T.length()+10,vector<int>(S.length()+10,0));
         for(int i=0;i<=T.length();i++) t[i][0]=0;
         for(int i=0;i<=S.length();i++) t[0][i]=1;// 1  ,not 0 
+        	// test case:   S="abcd" T="" ans=1
 
         for(int i=1;i<=S.length();i++)
         {
