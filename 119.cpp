@@ -1,5 +1,6 @@
 
 // http://www.cnblogs.com/yuzhangcmu/p/4190264.html
+// The most important point is :  d[i][j]=d[i-1][j-1] if word1[i]==word2[j]
 
 class Solution {
 public:    
