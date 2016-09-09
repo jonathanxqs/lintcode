@@ -9,11 +9,14 @@ public:
         // write your code here
         int n = A.size();
         int f[n + 1][101];
+        //init 
         for (int i = 0; i <= n ; ++i)
             for (int j = 0; j <=100; ++j)
                 f[i][j] = INT_MAX;
         for (int i = 0; i <= 100; ++i)
             f[0][i] = 0;
+
+
         for (int i = 1; i <=n; ++i)
             for (int  j = 0; j <= 100;++j)
                 if (f[i-1][j] != INT_MAX)
