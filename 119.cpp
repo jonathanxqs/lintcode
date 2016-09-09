@@ -22,6 +22,7 @@ public:
                 if (word1[i-1] == word2[j-1])
                     f[i][j] = f[i-1][j-1];
                 else
+                	//replace the last
                     f[i][j] = f[i-1][j-1] + 1;
                 f[i][j] = min(f[i][j], min(f[i-1][j]+1, f[i][j-1]+1));
             }
