@@ -13,9 +13,9 @@ public:
         if (n<=0) return -1;
 
         a.clear();
-        listAllUglyNumberFactorBy(2);
-        listAllUglyNumberFactorBy(3);
-        listAllUglyNumberFactorBy(5);
+        listAllUglyNumberFactorBy(n,2);
+        listAllUglyNumberFactorBy(n,3);
+        listAllUglyNumberFactorBy(n,5);
 
         auto it1=a.begin();
         int rt_num=*(it1+n-1);
@@ -34,5 +34,5 @@ public:
 
     }
 
-    
+
 };
