@@ -17,10 +17,10 @@ public:
         listAllUglyNumberFactorBy(n,3);
         listAllUglyNumberFactorBy(n,5);
 
-        auto it1=a.begin();
-        int rt_num=*(it1+n-1);
+        set<int>::iterator it1=a.begin();
+        for (int i=2;i<=n;i++) it1++;
 
-        return rt_num;
+        return *rt1;
 
 
 
