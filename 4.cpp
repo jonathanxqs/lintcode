@@ -18,9 +18,12 @@ public:
         listAllUglyNumberFactorBy(n,5);
 
         set<int>::iterator it1=a.begin();
-        for (int i=2;i<=n;i++) it1++;
+        for (int i=2;i<=n;i++) {
+        	cout<<*it1<<"	";
+        	it1++;
+        }
 
-        return *rt1;
+        return *it1;
 
 
 
