@@ -21,7 +21,7 @@ public:
         for (int i = 1; i <=n; ++i)
             for (int  j = 0; j <= 100;++j)
                 if (f[i-1][j] != INT_MAX)
-                for (int k = 0; k <= 100; ++k)
+                for (int k = max(0,j-target); k <= min(100,j+target); ++k)
                     if (abs(j-k) <= target)
                     if (f[i][k] > f[i-1][j] + abs(A[i-1]-k))
                         f[i][k] = f[i-1][j] + abs(A[i-1]-k);  
