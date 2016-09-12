@@ -26,6 +26,7 @@ public:
                     if (f[i][k] > f[i-1][j] + abs(A[i-1]-k))
                         f[i][k] = f[i-1][j] + abs(A[i-1]-k);  
 
+        //return
         int ans = INT_MAX;
         for (int i = 0; i <= 100; ++i)
             if (f[n][i] < ans)
