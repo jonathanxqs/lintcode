@@ -12,17 +12,22 @@ public:
     	while (j % 2==0) j=j/2;
     	while (j % 3==0) j=j/3;
     	while (j % 5==0) j=j/5;
+    	if (j==1) return true;
+    	else return false;
     }
 
     int nthUglyNumber(int n) {
         // write your code here
 
         if (n<=0) return -1;
+        if (n==1) return 1;
+        
         int i,j,k=1;
         
         
         i=1;
-        while (i<MAX_INT){
+
+        while (i<INT_MAX){
         	i++;
         	if (isUgly(i))
         		{
