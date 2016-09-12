@@ -13,13 +13,14 @@ public:
         if (n<=0) return -1;
 
         a.clear();
+        a.insert(1);
         listAllUglyNumberFactorBy(n,2);
         listAllUglyNumberFactorBy(n,3);
         listAllUglyNumberFactorBy(n,5);
 
         set<int>::iterator it1=a.begin();
         for (int i=2;i<=n;i++) {
-        	cout<<*it1<<"	";
+        	 // cout<<*it1<<"	";
         	it1++;
         }
 
@@ -30,7 +31,7 @@ public:
     }
 
     int listAllUglyNumberFactorBy(int n,int factor){
-    	for (int i=1;i<=3*n;i++){
+    	for (int i=1;i<=factor*n;i++){
     		if (i % factor ==0)
     			a.insert(i);
     	}
