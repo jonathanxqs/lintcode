@@ -30,7 +30,7 @@ public:
     }
 
     int listAllUglyNumberFactorBy(int n,int factor){
-    	for (int i=1;i<=n;i++){
+    	for (int i=1;i<=3*n;i++){
     		if (i % factor ==0)
     			a.insert(i);
     	}
