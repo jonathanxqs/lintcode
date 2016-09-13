@@ -11,6 +11,7 @@ public:
         stk.push(number);
         if (minstk.empty() or number <= minstk.top()) {
             minstk.push(number);
+            //top of minstk is always the smallest
         }
     }
 
