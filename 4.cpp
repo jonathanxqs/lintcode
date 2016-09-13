@@ -1,3 +1,37 @@
+class Solution {
+public:
+    /*
+     * @param n an integer
+     * @return the nth prime number as description.
+     */
+    int nthUglyNumber(int n) {
+        // write your code here
+
+        vector<int> ugly(n,0);
+        ugly[0]=1;
+        int ugly2=0,ugly3=0,ugly5=0;
+
+        int i=1;
+        while(i<=n-1){
+            int minUgly=min(min(ugly[ugly2]*2,ugly[ugly3]*3),ugly[ugly5]*5);
+            ugly[i]=minUgly;
+
+            /*注意这里分别if,因为有可能有多个等于minUgly*/
+            if(minUgly==ugly[ugly2]*2){
+                ugly2++;
+            }
+            if(minUgly==ugly[ugly3]*3){
+                ugly3++;
+            }
+            if(minUgly==ugly[ugly5]*5){
+                ugly5++;
+            }
+            i++;
+        }
+
+        return ugly[n-1];
+    }
+};
 
 
 // TLE SOLUTION 
