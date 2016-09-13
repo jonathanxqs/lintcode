@@ -29,3 +29,5 @@ public:
         return max;
     }
 };
+
+// Total Runtime: 32 ms
