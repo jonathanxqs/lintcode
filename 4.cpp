@@ -33,6 +33,8 @@ public:
     }
 };
 
+// Total Runtime: 19 ms
+
 // 解法一：时间复杂度O(k log k)，空间复杂度O(k)
 // 使用priority_queue模拟最小堆： priority_queue, greater >. 从中取出最小的 ugly number , 然后该 ugly number 分别乘以3, 5, 7 然后又放进 priority_queue中 如果上述过程中，将乘以3,5,7之后的数直接放入 priority_queue 将可能导致重复放入的问题，比如：当取出 9， 然后放入27, 45, 63,。后面当取出 21 时，放入 63, 105, 147，这里就重复放入 63 了。因此需要用个 unordered_set 来 mark 哪些元素已经放入过了。
 // 时间复杂度分析：共 k 个元素，每次取出一个元素时，都需要对堆进行操作，时间复杂度为 O(log k)，因此时间复杂度为 O(k log k).
