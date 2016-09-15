@@ -9,6 +9,8 @@ public:
 
     void push(int element) {
         // write your code here
+        stack1.push(element);
+
     }
     
     int pop() {
