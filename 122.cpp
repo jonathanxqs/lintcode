@@ -5,8 +5,8 @@ public:
       * @return: The area of largest rectangle in the histogram
       */
 
-    int Max(int a, int b){return a > b ? a : b;}
     
+
     int largestRectangleArea(vector<int> &height) {
     	height.push_back(0);
         stack<int> stk;
@@ -18,7 +18,7 @@ public:
             }else {
                 int t = stk.top();
 				stk.pop();
-                maxArea = Max(maxArea, height[t] * (stk.empty() ? i : i - stk.top() - 1));
+                maxArea = max(maxArea, height[t] * (stk.empty() ? i : i - stk.top() - 1));
             }
         }
         return maxArea;
