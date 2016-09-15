@@ -9,4 +9,5 @@ No.139  O(n logn) yes O(n*n) no<br>
   
   
 No.99  python  one-pass   c++  extra vector  
-No.120 121   My WA 
+No.120 121   My WA  
+No.122    TLE O(N*N)    INCREASING STACK O(N)

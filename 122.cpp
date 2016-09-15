@@ -14,7 +14,8 @@ public:
         int maxArea = 0;
         while(i < height.size()){
             if(stk.empty() || height[stk.top()] <= height[i]){
-                stk.push(i++);
+                stk.push(i);
+                i++;
             }else {
                 int t = stk.top();
 				stk.pop();
