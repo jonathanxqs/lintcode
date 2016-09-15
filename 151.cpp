@@ -13,10 +13,14 @@ public:
         int buy = 0;
         buy = prices[0];
         profit[0] = 0;
+        
+        //from the left
         for (int i = 1; i < prices.size(); i++) {
             profit[i] = max(profit[i - 1], prices[i] - buy);
             buy = min(buy, prices[i]);
         }
+
+        //from the right
         
         int sell = prices[prices.size() - 1];
         int best = 0;
