@@ -13,7 +13,7 @@ public:
         int buy = 0;
         buy = prices[0];
         profit[0] = 0;
-        
+
         //from the left
         for (int i = 1; i < prices.size(); i++) {
             profit[i] = max(profit[i - 1], prices[i] - buy);
@@ -32,3 +32,5 @@ public:
         return best;
     }
 };
+
+// Total Runtime: 34 ms
