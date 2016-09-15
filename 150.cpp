@@ -11,7 +11,7 @@ public:
         i=0;
         while (i<n){
         	j=prices[i];
-        	while (i<n and prices[i]<=prices[i+1]) i++;
+        	while (i<n-1 and prices[i]<=prices[i+1]) i++;
         	rt_profit+= prices[i]-j;
 
         	i++;
