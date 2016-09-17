@@ -32,6 +32,7 @@ public:
     			
     			// j times trans
     			// local sell on i,  global might not
+    			// 2-dimentional array first , reduce the space complexity to O(n)
                 for (int j = k; j >= 1; --j) {
                     local[j] = max(global[j - 1] + max(increase, 0), local[j] + increase);
                     global[j] = max(global[j], local[j]);
