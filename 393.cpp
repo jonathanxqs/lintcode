@@ -10,6 +10,7 @@ public:
             return 0;
 
         int ans = 0;
+        //actual unlimited transactions
         if (k >= prices.size() / 2)
         {
             for (int i = 1; i < prices.size(); ++i) {
@@ -17,9 +18,13 @@ public:
                     ans += prices[i] - prices[i - 1];
                 }
             }
-        } else {
+        } 
+
+        else {
             vector<int> local(k+1);
             vector<int> global(k+1);
+
+            //dp
             
             for (int i = 0; i < prices.size() - 1; ++i) {
                 int increase = prices[i + 1] - prices[i];
