@@ -24,11 +24,13 @@ public:
             vector<int> local(k+1);
             vector<int> global(k+1);
 
-            //dp
-            
+            //dp i from left to end 
+
+
             for (int i = 0; i < prices.size() - 1; ++i) {
                 int increase = prices[i + 1] - prices[i];
-    
+    			
+    			// j times trans
                 for (int j = k; j >= 1; --j) {
                     local[j] = max(global[j - 1] + max(increase, 0), local[j] + increase);
                     global[j] = max(global[j], local[j]);
