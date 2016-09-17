@@ -31,6 +31,7 @@ public:
                 int increase = prices[i + 1] - prices[i];
     			
     			// j times trans
+    			// local sell on i,  global might not
                 for (int j = k; j >= 1; --j) {
                     local[j] = max(global[j - 1] + max(increase, 0), local[j] + increase);
                     global[j] = max(global[j], local[j]);
