@@ -21,6 +21,7 @@ public:
         	n_it=n_it/10;
 
         	rt_count+=i*n_it;
+        	if (ys==0) rt_count -= 1*i;
         	if (ys==k) rt_count += yc+1;
         	if (ys>k) rt_count+=i;
 
