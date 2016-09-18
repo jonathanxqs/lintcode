@@ -16,8 +16,9 @@ public:
         	ys=n_it%10;
 
         	n_it=n_it/10;
-        	rt_count+=n_it;
+        	rt_count+=i*n_it;
         	if (ys>=k) rt_count+=1;
+        	i*=10;
         }
 
         return rt_count;
