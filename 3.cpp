@@ -21,7 +21,7 @@ public:
         	n_it=n_it/10;
 
         	rt_count+=i*n_it;
-        	if (ys==0) rt_count -= 1*i;
+        	if (k==0 and i>1) rt_count -= 1*i;
 
         	if (ys==k) rt_count += yc+1;
         	if (ys>k) rt_count+=i;
@@ -29,7 +29,7 @@ public:
         	i*=10;
         	yc=yc*10+ys; //right total
 
-        	cout<<rt_count<<" ";
+        	// cout<<rt_count<<" ";
         }
 
         return rt_count;
