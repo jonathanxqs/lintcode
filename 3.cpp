@@ -16,13 +16,16 @@ public:
         while (n_it>0){
 
         	tmp_count=0;
-        	ys=n_it%10;
-        	yc=yc*10+ys;
+        	ys=n_it%10;  // this digit
+        	
         	n_it=n_it/10;
 
-        	tmp_count+=i*n_it;
-        	if (ys>=k) rt_count+=1;
+        	rt_count+=i*n_it;
+        	if (ys==k) rt_count += yc+1;
+        	if (ys>k) rt_count+=i;
+
         	i*=10;
+        	yc=yc*10+ys; //right total
         }
 
         return rt_count;
