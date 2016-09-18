@@ -10,3 +10,5 @@ public:
         return a+b;
     }
 };
+
+// Total Runtime: 5 ms
