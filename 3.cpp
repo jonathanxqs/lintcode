@@ -10,7 +10,9 @@ public:
         
         int result = 0;  
         int base = 1;  
-        
+
+        if (n==0 and k==0 ) return 1;
+
         while (n/base > 0) {
             
             int cur  = (n/base)%10;
@@ -32,7 +34,7 @@ public:
                 result += high*base+low+1;
             }
 
-            if (k==0) result-=base;
+            if (k==0 and base>1) result-=base;
 
             base *= 10;
         }
