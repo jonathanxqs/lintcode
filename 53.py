@@ -7,3 +7,5 @@ class Solution:
         f.reverse();
         rv_s=" ".join(f);
         return rv_s;
+
+        # Total Runtime: 371 ms
