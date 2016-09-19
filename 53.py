@@ -3,6 +3,7 @@ class Solution:
     # @return : A string
     def reverseWords(self, s):
         # write your code here
-        f=s.split("");
-        reverse(f);
-        return f.str();
+        f=s.split();
+        f.reverse();
+        rv_s=" ".join(f);
+        return rv_s;
