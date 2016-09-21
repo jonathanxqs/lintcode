@@ -14,6 +14,10 @@ public:
     }
 
     stack reverStack(const stack& stackIn){
+        stack rtStack,tmpStack=stackIn;
+        while (!tmpStack.empty()){
+            tmpStack.push();
+        }
 
     }
     
