@@ -40,3 +40,5 @@ public:
         return stack2.top();
     }
 };
+
+// Total Runtime: 45 ms
