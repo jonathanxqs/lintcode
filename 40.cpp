@@ -15,6 +15,9 @@ public:
     
     int pop() {
         // write your code here
+        stack2=reverStack(stack1);
+        stack2.pop();
+        stack1=reverStack(stack2);
     }
 
     int top() {
