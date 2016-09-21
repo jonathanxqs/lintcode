@@ -12,11 +12,16 @@ public:
         stack1.push(element);
 
     }
+
+    stack reverStack(const stack& stackIn){
+
+    }
     
     int pop() {
         // write your code here
         stack2=reverStack(stack1);
-        int top=stack2.pop();
+        int top=stack2.top();
+        stack2.pop();
         stack1=reverStack(stack2);
         return top;
     }
