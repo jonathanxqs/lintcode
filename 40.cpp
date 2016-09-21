@@ -13,11 +13,15 @@ public:
 
     }
 
-    stack reverStack(const stack& stackIn){
-        stack rtStack,tmpStack=stackIn;
+    stack<int> reverStack(const stack<int>& stackIn){
+        stack<int> rtStack,tmpStack=stackIn;
         while (!tmpStack.empty()){
-            tmpStack.push();
+            int t1=tmpStack.top();
+            rtStack.push(t1);
+            tmpStack.pop();
         }
+
+        return rtStack;
 
     }
     
