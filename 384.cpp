@@ -11,12 +11,18 @@ public:
         int max_len=0;
         for (char c='a';c<='z';c++)
         	mapCtoSub[c]=-1;
-
-        for (i=0,j=0;j++;j<=){
+        cout<<s<<l_s<<endl;
+        for (i=0,j=0;j++;j<l_s){
         	if (mapCtoSub[s[j]]>-1) i=max(i,mapCtoSub[s[j]]);
+        	mapCtoSub[s[j]]=j;
         	int tmp_len=j-i;
+        	if (tmp_len>max_len) max_len=tmp_len;
+
+        	cout<<i<<" "<<j<<endl;
 
         }
+
+        return max_len;
 
 
     }
