@@ -14,7 +14,7 @@ public:
 
         // cout<<s<<l_s<<endl;
 
-        for (i=0,j=0;j<l_s;j++){
+        for (i=-1,j=0;j<l_s;j++){
         	// cout<<i<<" "<<j<<endl;
         	if (mapCtoSub[s[j]]>-1) i=max(i,mapCtoSub[s[j]]);
         	mapCtoSub[s[j]]=j;
