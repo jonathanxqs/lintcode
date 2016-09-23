@@ -20,7 +20,11 @@ public:
 
         //loop
         for (i=0;i<l_s;i++){
-        	if 
+        	if (baseOfPar[s[i]]<=3) que1.
+
+        	else {
+        		s
+        	}
         }
     }
 
