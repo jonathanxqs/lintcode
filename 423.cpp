@@ -9,7 +9,7 @@ public:
     题意：输入一个只包含括号的字符串，判断括号是否匹配
     模拟堆栈，读到左括号压栈，读到右括号判断栈顶括号是否匹配
     */
-    bool isValidParentheses((string s) {
+    bool isValidParentheses(string s) {
         int len = s.length();
         vector<char> stack;
         for (int i = 0; i < len; i++) {
