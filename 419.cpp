@@ -9,20 +9,21 @@ public:
     按照转换表模拟即可
     */
     int romanToInt(string s) {
-        map<char, int> num;
-        num['I'] = 1;
-        num['V'] = 5;
-        num['X'] = 10;
-        num['L'] = 50;
-        num['C'] = 100;
-        num['D'] = 500;
-        num['M'] = 1000;
+        map<char, int> Num;
+        Num['I'] = 1;
+        Num['V'] = 5;
+        Num['X'] = 10;
+        Num['L'] = 50;
+        Num['C'] = 100;
+        Num['D'] = 500;
+        Num['M'] = 1000;
+        //Roman digit rule
         int ans = Num[s[s.length() - 1]];
         for (int i = s.length() - 2; i >= 0; i--) {
-            if (num[s[i]] < num[s[i + 1]])
-                ans -= num[s[i]];
+            if (Num[s[i]] < Num[s[i + 1]])
+                ans -= Num[s[i]];
             else
-                ans += num[s[i]];
+                ans += Num[s[i]];
         }
         return ans;
     }
