@@ -1,5 +1,9 @@
 class Solution {
 public:
+	/**
+     * @param s Roman representation
+     * @return an integer
+     */
     /*
     题意: 将罗马数字转换成int
     按照转换表模拟即可
