@@ -9,9 +9,11 @@ public:
         int i,j,k,n=digits.size();
         int tmp,s_tmp,jw=0;
         std::vector<int> vRev(digits.rbegin(),digits.rend());
+
+        jw=1;
         for (auto &s:vRev){
         	// cout<<s<<" ";
-        	s_tmp=jw+s+1;
+        	s_tmp=jw+s;
         	s=s_tmp%10;
         	// cout<<s<<";";
         	jw=s_tmp/10; 
