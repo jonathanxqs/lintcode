@@ -9,11 +9,11 @@ public:
         bool used[9];
         for (int i = 0; i < 9; ++i) {
             fill(used, used + 9, false);
-            for (int j = 0; j < 9; ++j) // 检查行
+            for (int j = 0; j < 9; ++j) // Check the row
                 if (!check(board[i][j], used))
                     return false;
             fill(used, used + 9, false);
-            for (int j = 0; j < 9; ++j) // 检查列
+            for (int j = 0; j < 9; ++j) // check one column
                 if (!check(board[j][i], used))
                     return false;
         }
