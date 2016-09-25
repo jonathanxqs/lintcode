@@ -12,6 +12,7 @@ public:
             for (int j = 0; j < 9; ++j) // Check the row
                 if (!check(board[i][j], used))
                     return false;
+
             fill(used, used + 9, false);
             for (int j = 0; j < 9; ++j) // check one column
                 if (!check(board[j][i], used))
@@ -27,6 +28,7 @@ public:
             }
         return true;
     }
+    //check ch is used or not , used is pointer like reference
     bool check(char ch, bool used[9]) {
         if (ch == '.') return true;
         if (used[ch - '1']) return false;
