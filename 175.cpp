@@ -18,5 +18,13 @@ public:
      */
     void invertBinaryTree(TreeNode *root) {
         // write your code here
+        if (root==nullptr) return;
+        TreeNode *tmp=root->left;
+        root->left=root->right;
+        root->right=tmp;
+        
+        invertBinaryTree(root->left);
+        invertBinaryTree(root->right);
+
     }
 };
