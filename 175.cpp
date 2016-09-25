@@ -22,9 +22,10 @@ public:
         TreeNode *tmp=root->left;
         root->left=root->right;
         root->right=tmp;
-        
+
         invertBinaryTree(root->left);
         invertBinaryTree(root->right);
 
     }
 };
+// Total Runtime: 9 ms
