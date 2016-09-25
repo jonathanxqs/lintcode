@@ -12,7 +12,7 @@ public:
         int i,j;
 
         for (i=0;i<n;i++){
-        	rt_x *= rt_x;
+        	rt_x *= x;
         }
 
         return rt_x;
