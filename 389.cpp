@@ -33,3 +33,5 @@ public:
         return used[ch - '1'] = true;
     }
 };
+
+// Total Runtime: 9 ms
