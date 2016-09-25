@@ -17,7 +17,7 @@ public:
                 if (!check(board[j][i], used))
                     return false;
         }
-        for (int r = 0; r < 3; ++r) // 检查9 个子格子
+        for (int r = 0; r < 3; ++r) // check the sub 3x3 matix
             for (int c = 0; c < 3; ++c) {
                 fill(used, used + 9, false);
                 for (int i = r * 3; i < r * 3 + 3; ++i)
