@@ -20,7 +20,7 @@ public:
         int lengthA=0,lengthB=0;
         while(pa) {pa=pa->next;lengthA++;}
         while(pb) {pb=pb->next;lengthB++;}
-        
+
         if(lengthA<=lengthB){
           int n=lengthB-lengthA;
           pa=headA;pb=headB;
@@ -35,6 +35,6 @@ public:
           pb=pb->next;
         }
         return pa;
-      }
 
+      }
 };
