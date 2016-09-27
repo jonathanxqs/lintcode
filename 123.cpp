@@ -13,6 +13,11 @@ public:
         int ex_l=vx.size();
 
         if (vx.size()==word.size()){
+            for (int i4=0;i4<ex_l;i4++){
+                cout<<vx[i4]<<","<<vy[i4]<<" -> ";
+            }
+            cout<<endl;
+            
             return true;
         }
         if (board[i][j]!=word[ex_l]) return false;      
@@ -27,16 +32,16 @@ public:
             if (i_next<0 or i_next>=row) continue;
             if (j_next<0 or j_next>=col) continue;
 
-            if ( find(vx.begin(),vx.end(),i_next) !=vx.end() 
-                    and find(vy.begin(),vy.end(),j_next)!=vy.end()) continue;//already in 
+            int flag_already_inqueue=0;
+            for (int i4=0;i4<vx.size();i4++){
+                if (i_next==vx[i4] and j_next==vy[i4])
+                    flag_already_inqueue = 1;
 
-            
-            
+            }
+
+            if (flag_already_inqueue==1) continue;//already in 
 
             if (dfs(i_next,j_next,vx,vy)) return true;
-            
-
-
 
         }
         
