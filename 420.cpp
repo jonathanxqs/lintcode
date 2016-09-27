@@ -17,36 +17,41 @@ public:
         int i,j,k,m;
         i=2;
         while (i<=n){
-        	countAndSaySeqs.push_back(genNext(countAndSaySeqs[i-1]));
-        	i++;
+            countAndSaySeqs.push_back(genNext(countAndSaySeqs[i-1]));
+            i++;
         }
         return countAndSaySeqs[n];
     }
 
     string genNext(string s_prev){
-    	//pair  base times ->char
-    	pair<int,char> p1,p2;
-    	int i=0,j,k;
-    	string rt_next;
-    	
-    	if (s_prev.size()<1) return rt_next;
-    	char c_prev='&';// impossible char
+        //pair  base times ->char
+        pair<int,char> p1,p2;
+        int i=0,j,k;
+        string rt_next;
+        
+        if (s_prev.size()<1) return rt_next;
+        char c_prev=s_prev[0];// impossible char
 
-    	for (auto const s1:s_prev){
-    		if (s1==c_prev){
-    			i++;    			
-    		}
-    		else{
-    			stringstream ss_n;
-    			ss_n<<i<<c_prev;
-    			rt_next.push_back(ss_n.str());
+        for (auto const s1:s_prev){
+            if (s1==c_prev){
+                i++;                
+            }
+            else{
+                stringstream ss_n;
+                ss_n<<i<<c_prev;
+                rt_next += ss_n.str();
 
-    			i=1;
-    			c_prev=s1;
-    		}
+                i=1;
+                c_prev=s1;
+            }
 
-    	}
+        }
+        
+        stringstream ss_n;
+        ss_n<<i<<c_prev;
+        rt_next += ss_n.str();
 
-    	return rt_next;
+
+        return rt_next;
     }
 };
