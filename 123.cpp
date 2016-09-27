@@ -10,7 +10,12 @@ public:
 
     bool dfs(int i,int j,std::vector<int> &vx,vector<int> &vy){
     	int i_next,j_next,i1,j1;
-        int ex_l=vx.size();
+        int ex_l=vx.size();        
+
+        if (board[i][j]!=word[ex_l]) return false;      
+
+        vx.push_back(i);
+        vy.push_back(j);
 
         if (vx.size()==word.size()){
             for (int i4=0;i4<ex_l;i4++){
@@ -20,10 +25,9 @@ public:
             
             return true;
         }
-        if (board[i][j]!=word[ex_l]) return false;      
 
-        vx.push_back(i);
-        vy.push_back(j);
+
+
         
         for (int i5=0;i5<4;i5++){
             i_next=i+dx[i5];
@@ -44,6 +48,7 @@ public:
             if (dfs(i_next,j_next,vx,vy)) return true;
 
         }
+        //after 4 direaction trials
         
         vx.pop_back();
         vy.pop_back();
@@ -64,8 +69,11 @@ public:
         //find the start point 
         int i,j,k;
         for (i=0;i<row;i++)
-            for (j=0;j<col;j++)
+            for (j=0;j<col;j++){
+                vx.clear();
+                vy.clear();
                 if (dfs(i,j,vx,vy)) return true;
+            }
 
         return false;
     }
