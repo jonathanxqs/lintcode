@@ -46,7 +46,7 @@ public:
             }
 
         }
-        
+
         stringstream ss_n;
         ss_n<<i<<c_prev;
         rt_next += ss_n.str();
@@ -55,3 +55,5 @@ public:
         return rt_next;
     }
 };
+
+// Total Runtime: 19 ms
