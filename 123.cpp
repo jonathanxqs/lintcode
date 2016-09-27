@@ -7,20 +7,64 @@ public:
      */
     const int dx[4]={1,0,-1,0};
     int dy[4]={0,1,0,-1} const;
+
     bool dfs(int i,int j,std::vector<int> &vx,vector<int> &vy){
-    	if ()
+    	int i_next,j_next,i1,j1;
+        int ex_l=vx.size();
+
+        if (vx.size()==word.size()){
+            return true;
+        }
+        if (board[i][j]!=word[ex_l]) return false;      
+
+        vx.push_back(i);
+        vy.push_back(j);
+        
+        for (int i5=0;i5<4;i5++){
+            i_next=i+dx[i5];
+            j_next=j+dy[i5];
+
+            if (i_next<0 or i_next>=row) continue;
+            if (j_next<0 or j_next>=col) continue;
+
+            if (vx.find(i_next)!=vx.end() and vy.find(j_next)!=vy.end()) continue;//already in 
+
+            
+            
+
+            if (dfs(i_next,j_next,vx,vy)) return true;
+            
+
+
+
+        }
+        
+        vx.pop();
+        vy.pop();
 
     }
+
+    
     bool exist(vector<vector<char> > &board, string word) {
         // write your code here
-        row=board.size();
+        int row=board.size();
         if (row<=0) return false;
         col=board[0].size();
         if (col<=0) return false;
+        this->word=word;
+        this->board=board;
 
         //find the start point 
+        int i,j,k;
+        for (i=0;i<row;i++)
+            for (j=0;j<col;j++)
+                if (dfs(i,j)) return true;
+
+        return false;
     }
 
 private:
 	int row,col;
+    string word;
+    vector<vector<char> > board;
 };
