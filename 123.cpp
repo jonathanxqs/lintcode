@@ -27,7 +27,8 @@ public:
             if (i_next<0 or i_next>=row) continue;
             if (j_next<0 or j_next>=col) continue;
 
-            if (vx.find(i_next)!=vx.end() and vy.find(j_next)!=vy.end()) continue;//already in 
+            if ( find(vx.begin(),vx.end(),i_next) !=vx.end() 
+                    and find(vy.begin(),vy.end(),j_next)!=vy.end()) continue;//already in 
 
             
             
