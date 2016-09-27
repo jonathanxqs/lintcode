@@ -11,11 +11,7 @@ struct Node {
 
 class Solution {
 public:
-    /**
-     * @param board: A list of lists of character
-     * @param words: A list of string
-     * @return: A list of string
-     */
+    
     vector<string> results;
     Node * root;
     void insert(Node* p, string s) {
@@ -27,6 +23,9 @@ public:
         }   
         p->str = s;
     }
+
+    //dfs
+
     void search(vector<vector<char> > &board, vector<vector<bool> > &mask, Node* p, int x, int y) {
         if (p->str != "") {
             results.push_back(p->str);
@@ -51,6 +50,7 @@ public:
         }
         mask[x][y] = true;
     }
+
     /**
      * @param board: A list of lists of character
      * @param words: A list of string
