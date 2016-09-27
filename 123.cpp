@@ -6,7 +6,7 @@ public:
      * @return: A boolean
      */
     const int dx[4]={1,0,-1,0};
-    int dy[4]={0,1,0,-1} const;
+    int const dy[4]={0,1,0,-1} ;
 
     bool dfs(int i,int j,std::vector<int> &vx,vector<int> &vy){
     	int i_next,j_next,i1,j1;
@@ -40,8 +40,8 @@ public:
 
         }
         
-        vx.pop();
-        vy.pop();
+        vx.pop_back();
+        vy.pop_back();
 
     }
 
@@ -59,7 +59,7 @@ public:
         int i,j,k;
         for (i=0;i<row;i++)
             for (j=0;j<col;j++)
-                if (dfs(i,j)) return true;
+                if (dfs(i,j,vx,vy)) return true;
 
         return false;
     }
@@ -68,4 +68,6 @@ private:
 	int row,col;
     string word;
     vector<vector<char> > board;
+    std::vector<int> vx;
+    std::vector<int> vy;
 };
