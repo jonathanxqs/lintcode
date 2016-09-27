@@ -26,13 +26,24 @@ public:
     string genNext(string s_prev){
     	//pair  base times ->char
     	pair<int,char> p1,p2;
-    	int i,j,k;
+    	int i=0,j,k;
     	string rt_next;
-    	char c_prev='&';// impossible char
+    	
     	if (s_prev.size()<1) return rt_next;
+    	char c_prev='&';// impossible char
 
     	for (auto const s1:s_prev){
-    		if (s1==c_prev)
+    		if (s1==c_prev){
+    			i++;    			
+    		}
+    		else{
+    			stringstream ss_n;
+    			ss_n<<i<<c_prev;
+    			rt_next.push_back(ss_n.str());
+
+    			i=1;
+    			c_prev=s1;
+    		}
 
     	}
 
