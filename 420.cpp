@@ -31,7 +31,8 @@ public:
     	char c_prev='&';// impossible char
     	if (s_prev.size()<1) return rt_next;
 
-    	for (auto const s:s_prev){
+    	for (auto const s1:s_prev){
+    		if (s1==c_prev)
 
     	}
 
