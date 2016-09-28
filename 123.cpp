@@ -19,10 +19,12 @@ public:
         ex_l=vx.size();
 
         if (vx.size() == word.size()){
-            for (int i4=0;i4<ex_l;i4++){
+
+            /*for (int i4=0;i4<ex_l;i4++){
                 cout<<vx[i4]<<","<<vy[i4]<<" -> ";
             }
-            cout<<endl;            
+            cout<<endl;  */
+                      
             return true;
         }
 
