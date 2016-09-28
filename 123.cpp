@@ -66,7 +66,8 @@ public:
     
     bool exist(vector<vector<char> > &board, string word) {
         // write your code here
-        int row=board.size();
+        //init row and col
+        row=board.size();
         if (row<=0) return false;
         col=board[0].size();
         if (col<=0) return false;
