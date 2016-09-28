@@ -1,5 +1,5 @@
 
-struct Node {
+class Node {
     Node * ch[26];
     string str;
     Node() {
@@ -64,7 +64,10 @@ public:
         for (int i = 0; i < len; ++i) { 
             insert(root, words[i]);
         }
+
+        //first is the number,second all true to mask
         vector<vector<bool> > mask(board.size(), vector<bool>(board[0].size(), true));
+        //
         if (board.size() < 1) return results;
         for (int i = 0; i <board.size(); ++i) {
             for (int j = 0; j < board[0].size(); ++j) {
