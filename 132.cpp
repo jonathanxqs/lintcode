@@ -14,6 +14,7 @@ public:
     
     vector<string> results;
     Node * root;
+    //trie insert 
     void insert(Node* p, string s) {
         int len = s.size();
         for (int i = 0; i < len; ++i) {
