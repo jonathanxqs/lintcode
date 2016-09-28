@@ -1,12 +1,16 @@
 
+// data structure trie
 class Node {
+public:
     Node * ch[26];
     string str;
     Node() {
         for (int i = 0; i < 26; ++i)
             ch[i] = NULL;
-            str = "";
+
+        str = "";
     }
+
 };
 
 class Solution {
@@ -22,7 +26,7 @@ public:
                 p->ch[s[i]-'a'] = new Node();
             p = p->ch[s[i]-'a'];
         }   
-        p->str = s;
+        p->str = s;//last letter has the str
     }
 
     //dfs
