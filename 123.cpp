@@ -16,14 +16,22 @@ public:
 
         vx.push_back(i);
         vy.push_back(j);
+        ex_l=vx.size();
 
-        if (vx.size()==word.size()){
+        if (vx.size() == word.size()){
             for (int i4=0;i4<ex_l;i4++){
                 cout<<vx[i4]<<","<<vy[i4]<<" -> ";
             }
-            cout<<endl;
-            
+            cout<<endl;            
             return true;
+        }
+
+        if (vx.size()>1){
+            for (int i4=0;i4<ex_l;i4++){
+                cout<<vx[i4]<<","<<vy[i4]<<" -> ";
+            }
+            cout<<endl;            
+            
         }
 
 
@@ -40,7 +48,6 @@ public:
             for (int i4=0;i4<vx.size();i4++){
                 if (i_next==vx[i4] and j_next==vy[i4])
                     flag_already_inqueue = 1;
-
             }
 
             if (flag_already_inqueue==1) continue;//already in 
@@ -65,6 +72,8 @@ public:
         if (col<=0) return false;
         this->word=word;
         this->board=board;
+
+        cout<<word<<":"<<word.size()<<endl;
 
         //find the start point 
         int i,j,k;
