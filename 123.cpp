@@ -24,7 +24,7 @@ public:
                 cout<<vx[i4]<<","<<vy[i4]<<" -> ";
             }
             cout<<endl;  */
-                      
+
             return true;
         }
 
@@ -97,3 +97,6 @@ private:
     std::vector<int> vx;
     std::vector<int> vy;
 };
+
+
+// Total Runtime: 29 ms
