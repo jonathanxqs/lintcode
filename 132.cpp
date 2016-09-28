@@ -34,7 +34,7 @@ public:
     void search(vector<vector<char> > &board, vector<vector<bool> > &mask, Node* p, int x, int y) {
         if (p->str != "") {
             results.push_back(p->str);
-            p->str = "";
+            p->str = "";//solved this one , no use to remain
         }
 
         mask[x][y] = false;
@@ -53,6 +53,7 @@ public:
         if (x - 1 >= 0 && mask[x-1][y] && p->ch[board[x-1][y]-'a'] != NULL) {
            search(board,mask, p->ch[board[x-1][y]-'a'], x-1, y);
         }
+
         mask[x][y] = true;
     }
 
@@ -83,3 +84,5 @@ public:
         return results;
     }
 };
+
+// Total Runtime: 87 ms
