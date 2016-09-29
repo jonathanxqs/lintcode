@@ -6,5 +6,11 @@ public:
      */
     string longestPalindrome(string& s) {
         // Write your code here
+        int i,j,k,lenS = s.size();
+        int tmp_len;
+        string rtLongPalin;
+        for (i=0;i<lenS;i++){
+
+        }
     }
 };
