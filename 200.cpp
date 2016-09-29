@@ -12,6 +12,10 @@ public:
         int last_len = -1 , left_b = 0 ,right_b = 0 , max_len = 0;
 
         for (i=0;i<lenS;i++){
+            if (i-last_len>=0)
+                if (s[i] == s[i-last_len])
+
+            else 
             if (i-last_len-1>=0)
                 if ( s[i] == s[i-last_len-1]){
                     last_len += 2;
