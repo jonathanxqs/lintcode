@@ -23,9 +23,14 @@ public:
             if (last_len > max_len){
                 max_len = last_len;
                 right_b=i;
-                left_b=i-last_len-1;
+                left_b=i-last_len+1;
             }
 
         }
+
+        for (i=left_b;i<=right_b;i++)
+            rtLongPalin += s[i];
+
+        return rtLongPalin;
     }
 };
