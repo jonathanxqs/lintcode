@@ -7,29 +7,32 @@ public:
     int trapRainWater(vector<int> &heights) {
         // write your code here
         // init
-        int len=heights.size();
-        if (len<=1) return 0;
-        //add 0 and 0 to head and tail
-        std::vector<int> heightsHeadTail(heights);
-        heightsHeadTail.insert(heightsHeadTail.begin(),0);
-        heightsHeadTail.insert(heightsHeadTail.end(),0);
-        std::vector<int> peaksSubscript(len+5,0);
-
-        int left_b=0,right_b=0;
-        int rt_sum=0 , sum=0;
-        int i,j,k;
-        
-        for (auto const s:heightsHeadTail){
-            sum+=s;
-            sumTill.push_back(sum);
+        int maxHeight = 0, maxIndex;
+        for (int i = 0; i < heights.size(); i++) {
+            if (heights[i] > maxHeight) {
+                maxHeight = heights[i];
+                maxIndex = i;
+            }
         }
-
-        //find the peak array
         
-        sum = 0;
-        for (i=1;i<len-1;i++){
-            if (heightsHeadTail[i] >= heightsHeadTail[left_b]  )
-                peaksSubscript.push_back(i);
+        int sum = 0;
+        maxHeight = 0;
+        for (int i = 0; i < maxIndex; i++) {
+            if (maxHeight > heights[i]) {
+                sum += maxHeight - heights[i];
+            }
+            maxHeight = max(maxHeight, heights[i]);
         }
+        
+        maxHeight = 0;
+        for (int i = heights.size() - 1; i > maxIndex; i--) {
+            if (maxHeight > heights[i]) {
+                sum += maxHeight - heights[i];
+            }
+            maxHeight = max(maxHeight, heights[i]);
+        }
+        
+        return sum;
     }
 };
+
