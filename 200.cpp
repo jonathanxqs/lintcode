@@ -15,7 +15,8 @@ public:
             str += s[i];
         }
         str += '#';
-        // 将原字符串扩展成#a#b#的形式可以直接枚举长度，不用考虑回文串长度的奇偶性
+        // extend to #a#b#  ; 2len+1 total length
+        // don't care about the odd and even
         for (int i = 1; i < 2 * len; i++) {
             cnt = 0;
             while ((i - cnt >= 0) && (i + cnt <= 2 * len) && (str[i - cnt] == str[i + cnt]))
@@ -29,4 +30,5 @@ public:
         return ans;
     }
 };
+
 // Total Runtime: 47 ms
