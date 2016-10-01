@@ -15,8 +15,10 @@ public:
             str += s[i];
         }
         str += '#';
+
         // extend to #a#b#  ; 2len+1 total length
         // don't care about the odd and even
+        // O(n*n) Solution
         for (int i = 1; i < 2 * len; i++) {
             cnt = 0;
             while ((i - cnt >= 0) && (i + cnt <= 2 * len) && (str[i - cnt] == str[i + cnt]))
