@@ -19,7 +19,8 @@ public:
     bool isIdentical(TreeNode* a, TreeNode* b) {
         // Write your code here
         bool rt_identical_flag=false;
-        if (a->val == b-> val) rt_identical_flag=true
+        if ((a==NULL and b!=NULL) or (a!=NULL and b==NULL)) return false;
+        if (a->val == b-> val) rt_identical_flag=true;
             else return false;
 
         rt_identical_flag = rt_identical_flag and isIdentical(a->left,b->left) and isIdentical(a->right,b->right);
