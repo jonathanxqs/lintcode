@@ -24,9 +24,10 @@ public:
             while ((i - cnt >= 0) && (i + cnt <= 2 * len) && (str[i - cnt] == str[i + cnt]))
                 cnt++;
             cnt--;
+            // new (i-cnt)..(i+cnt)
             if (cnt > maxl) {
                 maxl = cnt;
-                ans = s.substr((i - cnt) / 2, (i + cnt) / 2 - (i - cnt) / 2);
+                ans = s.substr((i - cnt) / 2, cnt);
             }
         }
         return ans;
