@@ -14,7 +14,9 @@ public:
                 maxIndex = i;
             }
         }
+        //find the max height and index
         
+        //set max height as insurance for the right border
         int sum = 0;
         maxHeight = 0;
         for (int i = 0; i < maxIndex; i++) {
