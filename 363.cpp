@@ -14,7 +14,7 @@ public:
                 maxIndex = i;
             }
         }
-        //find the max height and index
+        //find the max height and index,as the stone for calculate
         
         //set max height as insurance for the right border
         int sum = 0;
@@ -26,6 +26,7 @@ public:
             maxHeight = max(maxHeight, heights[i]);
         }
         
+        //set max height as insurance for the left border
         maxHeight = 0;
         for (int i = heights.size() - 1; i > maxIndex; i--) {
             if (maxHeight > heights[i]) {
