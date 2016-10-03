@@ -9,7 +9,8 @@ public:
         int max = 0, area;
         int start = 0, end = height.size() - 1;
 
-        // sub
+        // substructure 
+        // perfect attribute
         while (start < end) {
             if (height[start] > height[end]) {
                 area = height[end] * (end - start);
