@@ -1,16 +1,11 @@
+
+
 class Solution {
 public:
     /**
      * @param heights: a vector of integers
      * @return: an integer
      */
-    int maxArea(vector<int> &heights) {
-        // write your code here
-    }
-};
-
-class Solution {
-public:
     int maxArea(vector<int> &height) {
         int max = 0, area;
         int start = 0, end = height.size() - 1;
