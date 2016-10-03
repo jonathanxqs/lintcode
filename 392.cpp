@@ -15,3 +15,5 @@ public:
         return totTilN[n+1];
     }
 };
+
+// Total Runtime: 474 ms
