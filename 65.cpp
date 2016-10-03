@@ -26,6 +26,7 @@ public:
     k - k / 2小元素，于是得到了数据规模变小的同类问题，递归解决
     如果 k / 2 大于某数列个数，所求元素必然不在另一数列的前k / 2个元素中，同上操作就好。
     */
+   
     double findKth(vector<int>& A, vector<int>& B, int A_st, int B_st, int k) {
         // 边界情况，任一数列为空
         if (A_st >= A.size()) {
@@ -45,6 +46,7 @@ public:
         }
         
     }
+    
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
         int sum = nums1.size() + nums2.size();
         double ret;
