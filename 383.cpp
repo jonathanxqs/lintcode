@@ -11,7 +11,7 @@ public:
 
         // substructure 
         // perfect attribute
-        // minimum border decide when length is fixeds
+        // minimum border decide when length is fixed
         while (start < end) {
             if (height[start] > height[end]) {
                 area = height[end] * (end - start);
@@ -29,3 +29,5 @@ public:
         return max;
     }
 };
+
+// Total Runtime: 51 ms
