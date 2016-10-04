@@ -11,6 +11,7 @@ public:
 
         // substructure 
         // perfect attribute
+        // minimum border decide when length is fixeds
         while (start < end) {
             if (height[start] > height[end]) {
                 area = height[end] * (end - start);
