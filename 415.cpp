@@ -16,11 +16,11 @@ public:
                 s1 += ::tolower(ch1);
         }
 
-        // cout<<
+        cout<< s1.size()<<endl;
         int len_s1 = s1.size();
         if (len_s1 == 0) return true;
 
-        for (i=0;i<len_s1;i<=len_s1-i-1)
+        for (i=0;i<=len_s1-i-1;i++)
             if (s1[i] != s1[len_s1-1-i])
                 return false;
 
