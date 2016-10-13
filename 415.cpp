@@ -16,7 +16,7 @@ public:
                 s1 += ::tolower(ch1);
         }
 
-        cout<< s1.size()<<endl;
+        // cout<< s1.size()<<endl;
         int len_s1 = s1.size();
         if (len_s1 == 0) return true;
 
