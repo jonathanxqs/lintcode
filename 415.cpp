@@ -12,7 +12,7 @@ public:
 
         string s1;
         for (auto ch1:s){
-            if (::isalpha(ch1)) 
+            if (::isalnum(ch1)) 
                 s1 += ::tolower(ch1);
         }
 
