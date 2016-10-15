@@ -5,11 +5,26 @@ public:
      * @return true if this is a happy number or false
      */
     
-    stringstream s;
+    
     bool isHappy(int n) {
         // Write your code here
-        s<<n;
+        stringstream s;
 
-        int tmp;
+
+        int tmp = n , times = 0 ;
+
+        while (times < 200){
+            s<<tmp;
+            int sum = 0;
+            for (auto  const ch1:s.str()) sum += ch1 -'0';
+            if (sum == 1) return true;
+
+            s.clear();
+            tmp = sum;
+            times++;
+        }
+
+        return false;
+
     }
 };
