@@ -16,10 +16,12 @@ public:
         while (times < 200){
             s<<tmp;
             int sum = 0;
-            for (auto  const ch1:s.str()) sum += ch1 -'0';
+            for (auto  const ch1:s.str()) sum += pow(ch1 -'0',2);
+            cout<<s.str()<<"  "<<sum<<endl;
+            
             if (sum == 1) return true;
 
-            s.clear();
+            s.str("");
             tmp = sum;
             times++;
         }
