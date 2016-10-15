@@ -17,7 +17,7 @@ public:
             s<<tmp;
             int sum = 0;
             for (auto  const ch1:s.str()) sum += pow(ch1 -'0',2);
-            cout<<s.str()<<"  "<<sum<<endl;
+            // cout<<s.str()<<"  "<<sum<<endl;
             
             if (sum == 1) return true;
 
@@ -30,3 +30,5 @@ public:
 
     }
 };
+
+// Total Runtime: 20 ms
