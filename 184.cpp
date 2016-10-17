@@ -4,7 +4,7 @@ public:
      *@param num: A list of non negative integers
      *@return: A string
      */
-    static bool cmp(int a,int b){
+     bool cmp(int a,int b){
         string ab;
         string ba;
         stringstream ss; 
