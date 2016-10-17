@@ -4,6 +4,7 @@ public:
      *@param num: A list of non negative integers
      *@return: A string
      */
+    
      bool cmp(int a,int b){
         string ab;
         string ba;
@@ -11,6 +12,7 @@ public:
         ss<<a<<b;
         ab=ss.str();
         ss.str("");
+
         ss<<b<<a;
         ba=ss.str();
         ss.str("");
@@ -21,9 +23,10 @@ public:
     string largestNumber(vector<int> &num) {
         // write your code here
 
-        num.sort(num.begin(),num.end(),cmp);
 
-        if(num[0]==0){
+        sort(num.begin(), num.end(),cmp);
+
+        if (num[0]==0){
             return "0";
         }
 
@@ -34,6 +37,7 @@ public:
 
         string res=ss.str();
         ss.str("");
+
         return res;
     }
 };
