@@ -21,7 +21,7 @@ public:
     string largestNumber(vector<int> &num) {
         // write your code here
 
-        sort(num.begin(),num.end(),cmp);
+        num.sort(num.begin(),num.end(),cmp);
 
         if(num[0]==0){
             return "0";
