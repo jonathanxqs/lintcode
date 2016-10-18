@@ -5,7 +5,7 @@ public:
      *@return: A string
      */
     
-     bool cmp_ab(int a,int b){
+     static bool cmp_ab(int a,int b){
         string ab;
         string ba;
         stringstream ss; 
