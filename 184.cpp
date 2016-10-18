@@ -5,7 +5,7 @@ public:
      *@return: A string
      */
     
-     bool cmp(int a,int b){
+     bool cmp_ab(int a,int b){
         string ab;
         string ba;
         stringstream ss; 
@@ -24,7 +24,7 @@ public:
         // write your code here
 
 
-        sort(num.begin(), num.end(),cmp);
+        sort(num.begin(), num.end(),cmp_ab);
 
         if (num[0]==0){
             return "0";
