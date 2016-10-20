@@ -51,10 +51,12 @@ public:
         
     }
     
+
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
         int sum = nums1.size() + nums2.size();
         double ret;
         
+        // odd or even
         if (sum & 1) {
             ret = findKth(nums1, nums2, 0, 0, sum / 2 + 1);
         } else {
