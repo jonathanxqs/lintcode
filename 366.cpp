@@ -18,7 +18,9 @@ public:
             i = j;
             j = q;
         }
-        return j;
+        return i;
 
     }
 };
+
+// Total Runtime: 717 ms
