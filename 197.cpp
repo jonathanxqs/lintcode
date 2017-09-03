@@ -7,12 +7,13 @@ public:
     const int max_len = 61;
 
     long long P[max_len];
+
     void init_P(){
-        long long n=1;
+        
         int i=1;  
         P[0]=1;
         while (i<max_len){
-            P[i]=P[i-1] * n;
+            P[i]=P[i-1] * i;
             i++;
         }
     }
