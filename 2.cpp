@@ -1,7 +1,10 @@
 class Solution {
  public:
-    // param n : description of n
-    // return: description of return 
+     /*
+     * @param n: A long integer
+     * @return: An integer, denote the number of trailing zeros in n!
+     */
+    
     long long trailingZeros(long long n) {
     	long long s=5,sum=0;
     	while (s<=n){
