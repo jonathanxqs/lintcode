@@ -20,3 +20,4 @@ class Solution {
 };
 
 //num of 5 ,
+// Total Runtime: 64 ms
