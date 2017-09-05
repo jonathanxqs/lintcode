@@ -15,3 +15,5 @@ class Solution {
         
     }
 };
+
+//num of 5 ,
