@@ -8,6 +8,10 @@ public:
     int kthLargestElement(int k, vector<int> nums) {
         // write your code here
         // 
+        int n = nums.size();
+        if (k > n) 
+            return -1;
         
+
     }
 };
