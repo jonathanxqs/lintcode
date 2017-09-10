@@ -11,6 +11,8 @@ public:
         int n = nums.size();
         if (k > n) 
             return -1;
+        if ( k <= 0)
+            return -2;
         
 
     }
