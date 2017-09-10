@@ -6,17 +6,8 @@ public:
      */
     const int max_len = 61;
 
-    long long P[max_len];
 
-    void init_P(){
-        
-        int i=1;  
-        P[0]=1;
-        while (i<max_len){
-            P[i]=P[i-1] * i;
-            i++;
-        }
-    }
+
 
     int len_n;
     long long permutationIndex(vector<int> A) {
@@ -24,5 +15,20 @@ public:
         init_P();
         len_n = A.size();
 
+        if (len_n == 0) return 0;
+        long long fact = 1, index = 0;
+        for (int i = len_n-1; i >= 0; i--) {
+            int rank = 0;
+            for (int j = i+1; j < len_n; j++) {
+                if (A[j] < A[i]) rank++;
+            }
+            index += rank * fact;
+            fact *= (len_n-i);
+        }
+        return index+1;
+
     }
 };
+
+
+
