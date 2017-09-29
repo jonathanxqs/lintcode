@@ -26,11 +26,7 @@ mz1893
 
 -----------------
 
-Nodejs
 
-npm user:  crusader_emp   
-key: x +5
-xucan  123 gmail.com
 
 
 
